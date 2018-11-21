@@ -17,7 +17,7 @@ void KalmanFilter::Init(VectorXd &x_in, MatrixXd &P_in, MatrixXd &F_in,
   F_ = F_in; // 4 by 4
   H_ = H_in; // laser: 2 by 4, radar: 3 by 4
   R_ = R_in; // laser: 2 by 2, radar: 3 by 3
-  Q_ = Q_in; // 4 * 4
+  Q_ = Q_in; // 4 by 4
 }
 
 void KalmanFilter::Predict() {
