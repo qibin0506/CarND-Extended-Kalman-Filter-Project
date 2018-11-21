@@ -12,12 +12,12 @@ KalmanFilter::~KalmanFilter() {}
 
 void KalmanFilter::Init(VectorXd &x_in, MatrixXd &P_in, MatrixXd &F_in,
                         MatrixXd &H_in, MatrixXd &R_in, MatrixXd &Q_in) {
-  x_ = x_in;
-  P_ = P_in;
-  F_ = F_in;
-  H_ = H_in;
-  R_ = R_in;
-  Q_ = Q_in;
+  x_ = x_in; // 1 by 4
+  P_ = P_in; // 4 by 4
+  F_ = F_in; // 4 by 4
+  H_ = H_in; // laser: 2 by 4, radar: 3 by 4
+  R_ = R_in; // laser: 2 by 2, radar: 3 by 3
+  Q_ = Q_in; // 4 * 4
 }
 
 void KalmanFilter::Predict() {
